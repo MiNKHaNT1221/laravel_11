@@ -17,4 +17,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+Route::get('/upgrade', [\App\Http\Controllers\UpgradeController::class, 'showForm'])->name('upgrade.form');
+Route::post('/upgrade', [\App\Http\Controllers\UpgradeController::class, 'submitForm'])->name('upgrade.submit');
+
 require __DIR__.'/auth.php';
